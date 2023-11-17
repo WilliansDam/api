@@ -12,22 +12,23 @@
     <table>
         <tr>
             <td>CEP:</td>
-            <td></td>
+            <td id="cep"></td>
         </tr>
         <tr>
             <Td>Lagradouro:</Td>
-        <td></td>
+        <td id="logradouro"></td>
         </tr>
         <tr>
             <td>Bairro:</td>
+            <td id="bairro"></td>
 
         </tr>
             <td>Cidade:</td>
-            <td></td>
+            <td id="cidade"></td>
         </tr>
         <tr>
             <td>Estado:</td>
-            <td></td>
+            <td id="estado"></td>
         </tr>
         
     </table>
@@ -39,7 +40,12 @@
         fetch(url).then((response) => {
             return response.json()
         }).then((response) => {
-            console.log(response)
+            document.querySelector("#cep").innerText = response.cep
+            document.querySelector("#logradouro").innerText = response.logradouro
+            document.querySelector("#bairro").innerText = response.bairro
+            document.querySelector("#cidade").innerText = response.localidade
+            document.querySelector("#estado").innerText = response.uf
+      
         })
         //alert(cepDigitado)
         //alert("clicou")
